@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject_id: 
+  lat: 
+  lng: 
+  place_name: MyString
+  twitt: MyString
+
+two:
+  subject_id: 
+  lat: 
+  lng: 
+  place_name: MyString
+  twitt: MyString
