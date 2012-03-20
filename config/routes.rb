@@ -13,6 +13,14 @@ Twitstalker::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  root :to => "twitter#index"
+
+    match "twitter" => "twitter#index", :as => :twitter
+
+    #xhr
+    match "get_hash_tweet" => "twitter#get_hash_tweet"
+
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
