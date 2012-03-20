@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  search_user: "Search Twitter user"
+  search_action: "Search..."
+  search_placeholder: "username"

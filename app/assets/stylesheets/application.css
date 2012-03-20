@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
 */
+.legend {
+height:100%;
+margin-top:10px;
+}

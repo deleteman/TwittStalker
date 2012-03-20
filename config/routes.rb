@@ -1,4 +1,8 @@
 Twitstalker::Application.routes.draw do
+  get "subject/search"
+
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -13,13 +17,14 @@ Twitstalker::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  root :to => "twitter#index"
+  root :to => "home#index"
 
     match "twitter" => "twitter#index", :as => :twitter
 
     #xhr
     match "get_hash_tweet" => "twitter#get_hash_tweet"
 
+  match "search" => "subject#search", :as => :subject_search
 
   # Sample resource route with options:
   #   resources :products do

@@ -1,0 +1,21 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-wrapper {
+  text-align:center;
+  margin-top:80px;
+}
+
+.input-prepend .add-on {
+   margin-right:-5px !important;
+}
+
+.search-field-box{
+  padding:10px;
+}
+
+.search-label {
+  font-size:14px;
+  font-weight:bold;
+}
