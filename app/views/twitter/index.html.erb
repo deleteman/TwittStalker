@@ -1,0 +1,35 @@
+<%= content_for :title do %>
+    <%= "Tweets page" %>
+<% end %>
+
+<%= content_for :section do %>
+    <div id='tweet-line'>
+      <p>
+        <span>Last Media Tweet from grilix:</span>
+        <%= @media_tweet.text %>
+      </p>
+
+      <p>
+        <span>Content</span>
+        <%= @media_tweet.geo.inspect %>
+        <%= image_tag @media_tweet.media.first.media_url_https %>
+      </p>
+
+      <p>
+        <span> Inspect media tweet: </span>
+        <%= @media_tweet.inspect %>
+      </p>
+
+      <p>
+        <span>Profile picture</span>
+        <%= image_tag @media_tweet.user.profile_image_url %>
+      </p>
+
+      <div class="ajax-loader-hash">
+        <span>Tweet by Hash tag:</span>
+        <span id="content_tweet"><%= @hash_tweet.text %></span>
+        <%= image_tag "/images/gif-loader.gif", :hidden => true %>
+      </div>
+
+    </div>
+<% end %>

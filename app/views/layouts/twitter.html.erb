@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "twitter", :media => "all" %>
+  <%= javascript_include_tag "twitter" %>
+  <title><%= yield :title %></title>
+</head>
+<body>
+<header>
+  <%= yield :header %>
+</header>
+<nav>
+  <%= yield :nav %>
+</nav>
+<section>
+  <%= yield :section %>
+</section>
+<footer>
+  <%= yield :footer %>
+</footer>
+</body>
+</html>
