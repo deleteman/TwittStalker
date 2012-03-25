@@ -6,3 +6,5 @@ en:
   search_user: "Search Twitter user"
   search_action: "Search..."
   search_placeholder: "username"
+  no_results_found: "No results found!"
+  no_results_found_text: "There were no results found on our servers, please try again, and this time, pay attention!"

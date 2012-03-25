@@ -7,6 +7,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "bootstrap" %>
   <%= csrf_meta_tags %>
+ <script type="text/javascript"  src="http://maps.googleapis.com/maps/api/js?key=<%= @GMAPS_API_KEY%>&sensor=false"></script>
 </head>
 <body>
  <div class="navbar navbar-fixed-top">

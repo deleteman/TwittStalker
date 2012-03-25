@@ -1,0 +1,10 @@
+  <%= form_tag(:subject_search, {:class => "search-form well form-horizontal"}) do %>
+    <%= label_tag "search-name",t(:search_user), {:class => "search-label"} %>
+    <div class="input-prepend search-field-box">
+      <span class="add-on">@</span>
+      <%= text_field_tag "prependedInput",'', {:name => "username", :class => "span2", :placeholder => t(:search_placeholder)}%>
+    </div>
+    <br/>
+    <%= submit_tag t(:search_action), {:class => "btn btn-primary btn-large"}%>
+  <% end %>
+

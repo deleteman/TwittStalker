@@ -13,3 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+var google_map = null;
+$(document).ready(function() {
+
+  var init_gmap_opts = {
+    zoom:8,
+    center: new google.maps.LatLng(37.0625,-95.677068),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  google_map = new google.maps.Map(document.getElementById("gmap"), init_gmap_opts);
+
+});

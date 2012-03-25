@@ -1,2 +1,21 @@
-<h1>Subject#search</h1>
-<p>Find me in app/views/subject/search.html.erb</p>
+
+ 
+<div class="search-results">
+  <% if !results_found %>
+    <div class="alert alert-block">
+      <h4 class="alert-heading"><%= t :no_results_found %></h4>
+      <%= t :no_results_found_text %>
+    </div>
+    <%= render "generics/search_form" %>
+  <% else %>
+    <h3>Results</h3>
+    <div id="gmap"></div>
+    <div class="subject-pic"><img src="<%=subject.profile_image%>" />
+    <span class="subject-name"><%= subject.full_name%> (A.K.A <%= subject.username%>)</span><br/>
+    <% subject.subject_check_ins.each do |chk_in|  %>
+      <div >
+      <%= chk_in.twitt %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

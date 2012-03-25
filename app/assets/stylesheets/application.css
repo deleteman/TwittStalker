@@ -12,6 +12,20 @@
  *= require_tree .
 */
 .legend {
-height:100%;
-margin-top:10px;
+  height:100%;
+  margin-top:10px;
+}
+
+.main-wrapper {
+  margin:60px auto;
+  width:80%;
+}
+
+.search-form {
+  text-align:center;
+}
+
+#gmap {
+  width:400px;
+  height:400px;
 }
