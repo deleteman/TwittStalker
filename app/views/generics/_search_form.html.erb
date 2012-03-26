@@ -1,4 +1,4 @@
-  <%= form_tag(:subject_search, {:class => "search-form well form-horizontal"}) do %>
+  <%= form_tag(:subject_search, {:method => :get, :class => "search-form well form-horizontal"}) do %>
     <%= label_tag "search-name",t(:search_user), {:class => "search-label"} %>
     <div class="input-prepend search-field-box">
       <span class="add-on">@</span>

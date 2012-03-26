@@ -26,6 +26,7 @@ class SubjectController < ApplicationController
           chk_in.twitt = t.text
           chk_in.lat = t.geo.coordinates[0]
           chk_in.lng = t.geo.coordinates[1]
+          chk_in.tweet_date = t.created_at
           chk_in.save
         end
       end

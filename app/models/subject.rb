@@ -6,6 +6,15 @@ class Subject < ActiveRecord::Base
    Twitter.user(username)
   end
 
+  def my_tweeting_locations
+
+    my_coords = []
+    subject_check_ins.group(:lat,:lng).count.each do |elem|
+      my_coords << {:coords => elem[0] , :count => elem[1]}
+    end
+    my_coords
+  end
+
   def get_my_tweets source = :twitter
 
     geo_tweets = []

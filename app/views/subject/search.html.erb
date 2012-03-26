@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  var markers = [];
+</script>
 
  
 <div class="search-results">
@@ -9,13 +12,28 @@
     <%= render "generics/search_form" %>
   <% else %>
     <h3>Results</h3>
-    <div id="gmap"></div>
     <div class="subject-pic"><img src="<%=subject.profile_image%>" />
     <span class="subject-name"><%= subject.full_name%> (A.K.A <%= subject.username%>)</span><br/>
-    <% subject.subject_check_ins.each do |chk_in|  %>
+    
+    <div id="gmap"></div>
+    <% subject.my_tweeting_locations.each do |coords|  %>
       <div >
-      <%= chk_in.twitt %>
+        <script type="text/javascript">
+         markers.push({
+          coords: <%= coords[:coords]%>,
+          weight: <%= coords[:count]%> 
+          }); 
+        </script>
       </div>
+      
     <% end %>
   <% end %>
+<script type="text/javascript">
+      $(document).ready(function(){
+        google_map.setCenter(new google.maps.LatLng(markers[0].coords[0], markers[0].coords[1]));
+        for(i = 0; i < markers.length; i++) {
+          renderMarker(google_map, markers[i]);
+        }
+  });
+      </script>
 </div>

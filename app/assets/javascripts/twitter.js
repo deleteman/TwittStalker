@@ -1,5 +1,6 @@
 //= require jquery
 
+/*
 window.setInterval(function(){
   refreshTweetHash();
 }, 10000);
@@ -23,3 +24,4 @@ function refreshTweetHash() {
 
     });
 }
+*/
