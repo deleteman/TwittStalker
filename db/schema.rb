@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319210407) do
+ActiveRecord::Schema.define(:version => 20120326034453) do
 
   create_table "subject_check_ins", :force => true do |t|
     t.integer  "subject_id"
@@ -21,13 +21,15 @@ ActiveRecord::Schema.define(:version => 20120319210407) do
     t.string   "twitt"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.date     "tweet_date"
   end
 
   create_table "subjects", :force => true do |t|
     t.string   "username"
     t.string   "full_name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "profile_image"
   end
 
 end
