@@ -29,3 +29,21 @@
   width:400px;
   height:400px;
 }
+
+.hidden {
+    display:none;
+}
+
+#gmap  {
+    width:55%;
+    float:left;
+}
+#tweets {
+    width:40%;
+    float:right;
+}
+
+.tweet-list li {
+    list-style: none;
+    text-shadow: 2px 2px white;
+}

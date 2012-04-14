@@ -1,6 +1,6 @@
 class SubjectController < ApplicationController
 
-  # Searchs for the user on our database and if it isn't there, then
+  # Searches for the user on our database and if it isn't there, then
   # it'll send a request to twitter. 
   # If a result comes from twitter, a new "Subject" is saved in the DB
   def search

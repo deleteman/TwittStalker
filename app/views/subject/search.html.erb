@@ -12,21 +12,29 @@
     <%= render "generics/search_form" %>
   <% else %>
     <h3>Results</h3>
-    <div class="subject-pic"><img src="<%=subject.profile_image%>" />
+    <div class="subject-pic"><img src="<%=subject.profile_image%>" /></div>
     <span class="subject-name"><%= subject.full_name%> (A.K.A <%= subject.username%>)</span><br/>
     
     <div id="gmap"></div>
-    <% subject.my_tweeting_locations.each do |coords|  %>
-      <div >
+    <div id="tweets">
+      <h2>Tweets from <%= subject.username %></h2>
+      <div id="empty-tweet-list" class="well"><em>Select one the of the locations to read the user's tweets</em></div>
+      <% subject.my_tweeting_locations.each_with_index do |coords,idx|  %>
+
         <script type="text/javascript">
          markers.push({
           coords: <%= coords[:coords]%>,
-          weight: <%= coords[:count]%> 
+          weight: <%= coords[:count]%> ,
+          id: <%= idx %>
           }); 
         </script>
-      </div>
-      
-    <% end %>
+        <ul class="well hidden tweet-list <%= idx %>">
+          <% subject.tweets_by_coords({:lat => coords[:coords][0], :lng => coords[:coords][1]}).each do |t| %>
+              <li ><%= t.twitt %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
   <% end %>
 <script type="text/javascript">
       $(document).ready(function(){

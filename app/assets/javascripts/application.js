@@ -39,15 +39,31 @@ function renderMarker(map, m) {
               position: new google.maps.LatLng(m.coords[0],m.coords[1]),
               map:map,
               title: "Tweets from this place: " + m.weight,
-              visible:true
+              visible:true,
+              m_id:m.id
           });
+
 
   //Displays a text box, need to improve on the information shown here...
   google.maps.event.addListener(marker,'click', function() {
-    var html = '<div >Tweets from this place: ' + m.weight + '</div>';
+      var html = "<div>";
+      if(m.weight == 1) {
+          html += "The user only tweeted once from his location";
+      } else {
+          html += "The user tweeted " + m.weight + " times from this location";
+      }
+      html += "</div>";
 
-    var info = new google.maps.InfoWindow( {content: html});
-    info.open(map,marker);
+      //Display the tweets from this location
+      $("#empty-tweet-list").hide();
+      $(".tweet-list").hide();
+      $("." + marker.m_id).show();
+
+      if(map.info_window_opened != null) {
+          map.info_window_opened.close();
+      }
+      map.info_window_opened = new google.maps.InfoWindow( {content: html});
+      map.info_window_opened.open(map,marker);
   });
   
 /*

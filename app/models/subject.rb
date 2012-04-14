@@ -15,6 +15,9 @@ class Subject < ActiveRecord::Base
     my_coords
   end
 
+  def tweets_by_coords coords
+     subject_check_ins.find_all_by_lat_and_lng(coords[:lat], coords[:lng])
+  end
   def get_my_tweets source = :twitter
 
     geo_tweets = []
@@ -33,4 +36,11 @@ class Subject < ActiveRecord::Base
     geo_tweets 
   end
 
+  #
+  #def tweets_by_timeperiod tp
+  #  if tp == :morning
+  #    subject_check_ins.where()
+  #  end
+  #
+  #end
 end
